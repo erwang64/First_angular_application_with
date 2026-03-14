@@ -1,5 +1,5 @@
 <h1>Ma superbe Application</h1>
 
 @for (personne of listePersonnes; track $index) {
-  <p>{{ personne.nom }} - {{ personne.ville }}</p>
+  <p>{{ personne.nom | uppercase }} - {{ personne.ville }}</p>
 }
