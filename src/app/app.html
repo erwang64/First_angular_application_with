@@ -1,21 +1,5 @@
 <h1>Ma superbe Application</h1>
 
-@if (listePersonnes.length > 0) {
-  
-  @for (p of listePersonnes; track p.nom) {
-    
-      <app-personne [nom]="p.nom" [ville]="p.ville" (personneSupprimee)="supprimerDeLaListe($event)" (personneModifiee)="modifierDansLaListe($event)"></app-personne>
-
-  }
-
-} @else {
-  <p>La liste est vide</p>
-}
-
-<app-formulaire-ajout-personne (personneCreee)="ajouterALaListe($event)"></app-formulaire-ajout-personne>
-
-
-
-@for (p of listePersonnes; track p.nom) {
-
+@for (personne of listePersonnes; track $index) {
+  <p>{{ personne.nom }} - {{ personne.ville }}</p>
 }
