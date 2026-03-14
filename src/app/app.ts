@@ -15,7 +15,16 @@ export class App {
 
     constructor(private personneService: PersonneService) {
       // On récupère les données via le service 
+        this.refreshList();
+    }
+
+    refreshList() {
         this.listePersonnes = this.personneService.getAllPersonnes();
+    }
+
+    DeletePersonne(personne: Personne) {
+        this.personneService.deletePersonne(personne);
+        this.refreshList();
     }
 
 }
